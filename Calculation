@@ -1,0 +1,88 @@
+import java.util.Scanner;
+
+public class Pi_Calculator {
+  
+  
+  
+  public static void main(String args[]){
+    
+    int count = 0;
+    int time = 3;
+    
+    System.out.println("How accurate do you want the Pi calculation to be?");
+    System.out.println("Answer with a number 1-10:");
+    
+    Scanner in = new Scanner(System.in);
+    int num = in.nextInt();
+    
+    if ( num == 1) {
+      count = 100000;
+    } else if (num == 2) {
+      count = 200000;
+    } else if (num == 3) {
+      count = 300000;
+    } else if (num == 4) {
+      count = 400000;
+    } else if (num == 5) {
+      count = 500000;
+    } else if (num == 6) {
+      count = 600000;
+    } else if (num == 7) {
+      count = 700000;
+    } else if (num == 8) {
+      count = 800000;   
+    } else if (num == 9) {
+      count = 900000;
+    } else if (num == 10) {
+      count = 1000000;
+    } else {
+      System.out.println("That is not a valid unput value!");
+      System.out.println("Executing program based on default value 5...");
+      count = 500000;
+    }
+    
+    try {
+      for (int i=0; i<time ; i++) {
+        Thread.sleep(1000);
+        System.out.println("Calculating...");
+            }
+        } catch (InterruptedException ie)
+        {
+            Thread.currentThread().interrupt();
+        }
+        
+
+    
+    
+    
+    double a = 9;
+    double b =11;
+    double pi = (1 - 1d/3d + 1d/5d - 1d/7d);
+    
+        
+    
+    for (int x = 0; x <= count; x++){
+      pi = (pi + (1d/a) );
+      a = (a + 4);
+      pi = (pi - (1d/b) );
+      b = (b + 4);
+        
+    }
+    
+   pi = (pi*4);
+      
+    
+  System.out.println("The value of Pi is: " + pi);
+  
+  }
+}
+
+
+//I'd like to thank all of these websites for their contributions:
+//https://en.wikipedia.org/wiki/Pi
+//http://interactivepython.org/runestone/static/JavaReview/VariableBasics/declareVars.html
+//https://stackoverflow.com/questions/23283041/how-to-make-java-delay-for-a-few-seconds?rq=1
+//https://www.w3schools.com/java/java_conditions.asp
+//https://stackoverflow.com/questions/2506077/how-to-read-integer-value-from-the-standard-input-in-java
+//https://www.quora.com/How-do-I-use-the-scanner-class-in-Java-to-take-a-whole-sentence-as-user-input
+//https://codippa.com/how-to-work-with-fractions-in-java/
